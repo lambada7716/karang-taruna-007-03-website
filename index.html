@@ -1,0 +1,1218 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Karang Taruna 007/03 | Komunitas Masyarakat</title>
+    <meta
+      name="description"
+      content="Website resmi Karang Taruna 007/03: transparansi kegiatan, program, laporan keuangan, dan komunikasi warga."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #f5f7f8;
+        --bg-strong: #edf6f8;
+        --card: #ffffff;
+        --card-alt: #f8fafb;
+        --primary: #0f7a8b;
+        --primary-dark: #0a5d6d;
+        --primary-soft: rgba(15, 122, 139, 0.12);
+        --accent: #f4b942;
+        --accent-soft: rgba(244, 185, 66, 0.16);
+        --text: #13212d;
+        --muted: #58707f;
+        --line: #dfe9ee;
+        --success: #2d9a6f;
+        --success-soft: rgba(45, 154, 111, 0.12);
+        --shadow: 0 18px 50px rgba(14, 38, 50, 0.12);
+        --radius: 22px;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Inter", sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        line-height: 1.65;
+      }
+
+      img {
+        max-width: 100%;
+        display: block;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .container {
+        width: min(1120px, calc(100% - 32px));
+        margin: 0 auto;
+      }
+
+      .section {
+        padding: 100px 0;
+      }
+
+      .section-header {
+        text-align: center;
+        max-width: 760px;
+        margin: 0 auto 42px;
+      }
+
+      .eyebrow {
+        display: inline-block;
+        padding: 8px 14px;
+        border-radius: 999px;
+        background: var(--primary-soft);
+        color: var(--primary-dark);
+        font-size: 0.72rem;
+        font-weight: 800;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        margin-bottom: 18px;
+      }
+
+      h1, h2, h3, h4, h5, p {
+        margin-top: 0;
+      }
+
+      h2 {
+        font-size: clamp(2.1rem, 4vw, 3rem);
+        line-height: 1.1;
+        color: var(--primary-dark);
+        margin-bottom: 14px;
+      }
+
+      .section-header p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 1.04rem;
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 52px;
+        padding: 0 22px;
+        border-radius: 999px;
+        font-weight: 700;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+        border: 1px solid transparent;
+      }
+
+      .btn:hover {
+        transform: translateY(-2px);
+      }
+
+      .btn-primary {
+        background: linear-gradient(135deg, var(--accent), #f7d06a);
+        color: #1a1b1f;
+        box-shadow: 0 12px 25px rgba(244, 185, 66, 0.35);
+      }
+
+      .btn-secondary {
+        background: rgba(255, 255, 255, 0.08);
+        border-color: rgba(255, 255, 255, 0.45);
+        color: #ffffff;
+      }
+
+      .header {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        background: rgba(255, 255, 255, 0.82);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid rgba(223, 233, 238, 0.9);
+      }
+
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        min-height: 78px;
+        gap: 20px;
+      }
+
+      .brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        font-weight: 800;
+        color: var(--primary-dark);
+      }
+
+      .brand-badge {
+        width: 42px;
+        height: 42px;
+        display: grid;
+        place-items: center;
+        border-radius: 14px;
+        background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+        color: #fff;
+        font-size: 1.05rem;
+        box-shadow: 0 10px 22px rgba(15, 122, 139, 0.28);
+      }
+
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 28px;
+        color: var(--muted);
+        font-weight: 600;
+        flex-wrap: wrap;
+      }
+
+      .nav-links a:hover {
+        color: var(--primary);
+      }
+
+      .nav-cta {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 46px;
+        padding: 0 18px;
+        border-radius: 999px;
+        background: var(--primary);
+        color: #fff;
+        font-weight: 700;
+      }
+
+      .hero {
+        padding: 88px 0 76px;
+        background:
+          linear-gradient(135deg, rgba(10, 93, 109, 0.96), rgba(15, 122, 139, 0.88)),
+          url("https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1600&q=80") center/cover no-repeat;
+        color: #fff;
+      }
+
+      .hero-grid {
+        display: grid;
+        grid-template-columns: 1.25fr 0.75fr;
+        align-items: center;
+        gap: 32px;
+      }
+
+      .hero-copy h1 {
+        font-size: clamp(2.5rem, 5vw, 4.3rem);
+        line-height: 1.06;
+        margin-bottom: 18px;
+        letter-spacing: -0.05em;
+      }
+
+      .lead {
+        max-width: 620px;
+        font-size: 1.1rem;
+        color: rgba(255, 255, 255, 0.9);
+        margin-bottom: 28px;
+      }
+
+      .hero-actions {
+        display: flex;
+        gap: 16px;
+        flex-wrap: wrap;
+        margin-bottom: 24px;
+      }
+
+      .hero-stats {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 20px;
+        max-width: 560px;
+      }
+
+      .stat-item {
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        border-radius: 18px;
+        padding: 18px 16px;
+      }
+
+      .stat-number {
+        display: block;
+        font-weight: 800;
+        font-size: clamp(1.5rem, 3vw, 2rem);
+        line-height: 1.1;
+        margin-bottom: 5px;
+      }
+
+      .stat-label {
+        color: rgba(255, 255, 255, 0.8);
+        font-size: 0.9rem;
+      }
+
+      .hero-panel {
+        padding: 24px;
+        border-radius: var(--radius);
+        background: rgba(255, 255, 255, 0.09);
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        box-shadow: var(--shadow);
+      }
+
+      .mini-card {
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        border-radius: 18px;
+        padding: 18px 18px 16px;
+        margin-bottom: 14px;
+      }
+
+      .mini-card:last-child {
+        margin-bottom: 0;
+      }
+
+      .mini-card small {
+        display: block;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.72);
+        margin-bottom: 8px;
+      }
+
+      .mini-card strong {
+        font-size: 1.4rem;
+        display: block;
+        margin-bottom: 6px;
+      }
+
+      .about-grid {
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 30px;
+        align-items: center;
+      }
+
+      .about-copy p {
+        color: var(--muted);
+        font-size: 1.02rem;
+      }
+
+      .check-list {
+        list-style: none;
+        padding: 0;
+        margin: 28px 0 0;
+        display: grid;
+        gap: 14px;
+      }
+
+      .check-list li {
+        display: flex;
+        gap: 12px;
+        align-items: flex-start;
+        padding: 15px 16px;
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        box-shadow: 0 8px 25px rgba(14, 38, 50, 0.04);
+      }
+
+      .check-icon {
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+        display: grid;
+        place-items: center;
+        background: var(--primary-soft);
+        color: var(--primary-dark);
+        font-weight: 800;
+        flex-shrink: 0;
+      }
+
+      .image-card {
+        position: relative;
+        background: linear-gradient(135deg, #dfeef2, #f8f1df);
+        border-radius: 24px;
+        padding: 18px;
+        border: 1px solid var(--line);
+        box-shadow: var(--shadow);
+      }
+
+      .image-card img {
+        border-radius: 18px;
+        height: 100%;
+        min-height: 420px;
+        object-fit: cover;
+      }
+
+      .floating-badge {
+        position: absolute;
+        right: 24px;
+        bottom: 24px;
+        background: rgba(255, 255, 255, 0.92);
+        color: var(--primary-dark);
+        border-radius: 16px;
+        padding: 14px 16px;
+        box-shadow: var(--shadow);
+        font-weight: 700;
+      }
+
+      .program-grid,
+      .stats-grid,
+      .team-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 24px;
+      }
+
+      .card {
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        padding: 24px 20px;
+        box-shadow: 0 12px 30px rgba(14, 38, 50, 0.05);
+      }
+
+      .icon-box {
+        width: 58px;
+        height: 58px;
+        border-radius: 18px;
+        display: grid;
+        place-items: center;
+        background: var(--primary-soft);
+        color: var(--primary-dark);
+        font-size: 1.55rem;
+        margin-bottom: 16px;
+      }
+
+      .card h3 {
+        font-size: 1.28rem;
+        color: var(--primary-dark);
+        margin-bottom: 10px;
+      }
+
+      .card p {
+        margin: 0;
+        color: var(--muted);
+      }
+
+      .transparency {
+        background: var(--bg-strong);
+      }
+
+      .dashboard {
+        background: linear-gradient(180deg, #ffffff, #f2f9fb);
+        border: 1px solid var(--line);
+        border-radius: 24px;
+        overflow: hidden;
+        box-shadow: var(--shadow);
+      }
+
+      .dashboard-head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        padding: 20px 22px;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .dashboard-head h3 {
+        margin: 0;
+        color: var(--primary-dark);
+      }
+
+      .pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        border-radius: 999px;
+        background: var(--success-soft);
+        color: var(--success);
+        padding: 8px 12px;
+        font-size: 0.78rem;
+        font-weight: 800;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+      }
+
+      .dashboard-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 22px;
+        padding: 26px 22px 30px;
+      }
+
+      .metric {
+        background: #fff;
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        padding: 20px 18px;
+      }
+
+      .ring {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        position: relative;
+        display: grid;
+        place-items: center;
+        margin: 0 auto 18px;
+      }
+
+      .ring::before {
+        content: "";
+        position: absolute;
+        inset: 12px;
+        border-radius: 50%;
+        background: #fff;
+      }
+
+      .ring span {
+        position: relative;
+        font-weight: 800;
+        color: var(--primary-dark);
+      }
+
+      .metric h4 {
+        margin: 0 0 8px;
+        text-align: center;
+        color: var(--primary-dark);
+      }
+
+      .metric p {
+        margin: 0;
+        text-align: center;
+        color: var(--muted);
+      }
+
+      .calendar-wrap {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 24px;
+        align-items: start;
+      }
+
+      .calendar-box {
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        padding: 22px;
+        box-shadow: 0 12px 30px rgba(14, 38, 50, 0.05);
+      }
+
+      .month {
+        text-align: center;
+        color: var(--primary-dark);
+        font-size: 1.15rem;
+        font-weight: 800;
+        margin-bottom: 18px;
+      }
+
+      .day-row,
+      .date-grid {
+        display: grid;
+        grid-template-columns: repeat(7, minmax(0, 1fr));
+        gap: 10px;
+      }
+
+      .day-row {
+        margin-bottom: 12px;
+        font-size: 0.76rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--muted);
+        text-align: center;
+        font-weight: 700;
+      }
+
+      .date-grid {
+        text-align: center;
+      }
+
+      .date-cell {
+        display: grid;
+        place-items: center;
+        min-height: 44px;
+        border-radius: 10px;
+        background: #f3f7f8;
+        color: var(--text);
+        border: 1px solid transparent;
+      }
+
+      .date-cell.muted {
+        opacity: 0.38;
+      }
+
+      .date-cell.event {
+        background: var(--primary-soft);
+        border-color: rgba(15, 122, 139, 0.2);
+        color: var(--primary-dark);
+        font-weight: 800;
+      }
+
+      .event-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: grid;
+        gap: 12px;
+      }
+
+      .event-list li {
+        background: #f7fafb;
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        padding: 14px 16px;
+      }
+
+      .event-list strong {
+        display: block;
+        color: var(--primary-dark);
+        margin-bottom: 4px;
+      }
+
+      .event-list span {
+        color: var(--muted);
+        font-size: 0.94rem;
+      }
+
+      .team-card {
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 12px 30px rgba(14, 38, 50, 0.05);
+      }
+
+      .team-card img {
+        width: 100%;
+        height: 260px;
+        object-fit: cover;
+      }
+
+      .team-body {
+        padding: 18px 18px 20px;
+      }
+
+      .team-body h3 {
+        color: var(--primary-dark);
+        margin-bottom: 4px;
+      }
+
+      .role {
+        color: var(--primary);
+        font-weight: 700;
+        margin-bottom: 10px;
+      }
+
+      .team-body p {
+        margin: 0;
+        color: var(--muted);
+      }
+
+      .cta {
+        background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+        color: #fff;
+        padding: 30px 0;
+        border-radius: 28px;
+      }
+
+      .cta-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 18px;
+        flex-wrap: wrap;
+      }
+
+      .cta-inner h3 {
+        margin: 0;
+        font-size: clamp(1.6rem, 3vw, 2.2rem);
+      }
+
+      .cta-inner p {
+        margin: 8px 0 0;
+        color: rgba(255, 255, 255, 0.9);
+      }
+
+      .contact-grid {
+        display: grid;
+        grid-template-columns: 0.95fr 1.05fr;
+        gap: 28px;
+      }
+
+      .contact-card,
+      .form-card {
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: 24px;
+        padding: 24px;
+        box-shadow: 0 12px 30px rgba(14, 38, 50, 0.04);
+      }
+
+      .contact-card h3,
+      .form-card h3 {
+        color: var(--primary-dark);
+        margin-bottom: 18px;
+      }
+
+      .info-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: grid;
+        gap: 14px;
+      }
+
+      .info-list li {
+        background: #f7fafb;
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        padding: 14px 15px;
+        color: var(--muted);
+      }
+
+      .info-list strong {
+        display: block;
+        margin-bottom: 4px;
+        color: var(--primary-dark);
+      }
+
+      form {
+        display: grid;
+        gap: 16px;
+      }
+
+      .field {
+        display: grid;
+        gap: 8px;
+      }
+
+      label {
+        color: var(--primary-dark);
+        font-weight: 700;
+      }
+
+      input,
+      textarea {
+        width: 100%;
+        border-radius: 12px;
+        border: 1px solid var(--line);
+        background: #fff;
+        padding: 14px 14px;
+        font: inherit;
+        color: var(--text);
+      }
+
+      textarea {
+        min-height: 140px;
+        resize: vertical;
+      }
+
+      .submit-btn {
+        border: 0;
+        min-height: 52px;
+        border-radius: 12px;
+        font-weight: 800;
+        background: var(--primary);
+        color: #fff;
+        cursor: pointer;
+      }
+
+      footer {
+        background: #0d2a34;
+        color: rgba(255, 255, 255, 0.85);
+        padding: 28px 0;
+      }
+
+      .footer-inner {
+        display: flex;
+        justify-content: space-between;
+        gap: 16px;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+
+      @media (max-width: 980px) {
+        .hero-grid,
+        .about-grid,
+        .calendar-wrap,
+        .contact-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .program-grid,
+        .stats-grid,
+        .team-grid,
+        .dashboard-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
+
+      @media (max-width: 720px) {
+        .nav {
+          flex-wrap: wrap;
+          justify-content: center;
+          padding: 14px 0;
+        }
+
+        .nav-links {
+          justify-content: center;
+        }
+
+        .hero-stats,
+        .program-grid,
+        .stats-grid,
+        .team-grid,
+        .dashboard-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .hero {
+          padding-top: 68px;
+        }
+
+        .cta-inner {
+          align-items: flex-start;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <div class="container nav">
+        <a href="#top" class="brand" aria-label="Beranda Karang Taruna 007/03">
+          <span class="brand-badge">KT</span>
+          <span>Karang Taruna 007/03</span>
+        </a>
+
+        <nav class="nav-links" aria-label="Navigasi utama">
+          <a href="#beranda">Beranda</a>
+          <a href="#tentang">Tentang</a>
+          <a href="#program">Program</a>
+          <a href="#transparansi">Transparansi</a>
+          <a href="#jadwal">Jadwal</a>
+          <a href="#kontak">Kontak</a>
+        </nav>
+
+        <a href="#kontak" class="nav-cta">Daftar</a>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero" id="beranda">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <div class="eyebrow" style="background: rgba(255,255,255,0.08); color: white; border: 1px solid rgba(255,255,255,0.18);">
+              Komunitas RT 007 / RW 03
+            </div>
+            <h1>Membangun semangat gotong royong dan kesejahteraan warga.</h1>
+            <p class="lead">
+              Platform digital resmi Karang Taruna 007/03 untuk menyampaikan informasi,
+              mempublikasikan program, menjaga transparansi, dan memperkuat komunikasi antar warga.
+            </p>
+
+            <div class="hero-actions">
+              <a href="#program" class="btn btn-primary">Lihat Program</a>
+              <a href="#kontak" class="btn btn-secondary">Hubungi Kami</a>
+            </div>
+
+            <div class="hero-stats" aria-label="Statistik utama">
+              <div class="stat-item">
+                <span class="stat-number">120+</span>
+                <span class="stat-label">Anggota aktif</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number">14</span>
+                <span class="stat-label">Program berjalan</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number">98%</span>
+                <span class="stat-label">Partisipasi warga</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-panel" aria-label="Agenda utama karang taruna">
+            <div class="mini-card">
+              <small>Agenda terbaru</small>
+              <strong>Kerja Bakti Warga</strong>
+              <div>Sabtu, 12 Oktober 2026</div>
+            </div>
+
+            <div class="mini-card">
+              <small>Program unggulan</small>
+              <strong>Posyandu Remaja</strong>
+              <div>Setiap minggu</div>
+            </div>
+
+            <div class="mini-card">
+              <small>Transparansi kas</small>
+              <strong>Rp 24,8 Juta</strong>
+              <div>Perkembangan bulan ini</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="tentang">
+        <div class="container">
+          <div class="section-header">
+            <span class="eyebrow">Tentang Kami</span>
+            <h2>Semangat kebersamaan untuk lingkungan yang sehat, maju, dan harmonis.</h2>
+            <p>
+              Karang Taruna 007/03 hadir sebagai wadah penggerak pemuda dan masyarakat untuk
+              mewujudkan lingkungan yang lebih produktif, tertib, dan peduli satu sama lain.
+            </p>
+          </div>
+
+          <div class="about-grid">
+            <div class="about-copy">
+              <p>
+                Kami mengembangkan berbagai kegiatan sosial, pendidikan, kesehatan, lingkungan,
+                hingga pemberdayaan ekonomis berbasis komunitas. Keberadaan Karang Taruna menjadi
+                penghubung antara warga, pengurus, dan mitra untuk menjawab kebutuhan sosial yang nyata.
+              </p>
+
+              <p>
+                Dengan pendekatan yang inklusif dan berbasis kolaborasi, kami membuka ruang bagi setiap
+                warga untuk terlibat aktif, menyampaikan aspirasi, dan ikut serta mendorong perubahan yang
+                bermanfaat bagi semua.
+              </p>
+
+              <ul class="check-list">
+                <li>
+                  <span class="check-icon">✓</span>
+                  <span>Fokus pada pemberdayaan pemuda, lingkungan, dan kesehatan masyarakat.</span>
+                </li>
+                <li>
+                  <span class="check-icon">✓</span>
+                  <span>Komunikasi terbuka dan dua arah antara pengurus dan warga melalui media digital.</span>
+                </li>
+                <li>
+                  <span class="check-icon">✓</span>
+                  <span>Kolaborasi dengan kelurahan, sponsor, dan mitra komunitas untuk program jangka panjang.</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="image-card">
+              <img
+                src="https://images.unsplash.com/photo-1517457373958-b7bdd4587205?auto=format&fit=crop&w=1000&q=80"
+                alt="Kegiatan masyarakat"
+              />
+              <div class="floating-badge">Aktif • Terbuka • Bersama</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="program">
+        <div class="container">
+          <div class="section-header">
+            <span class="eyebrow">Program & Kegiatan</span>
+            <h2>Program yang bermanfaat dan aktif di masyarakat.</h2>
+            <p>
+              Setiap program kami dirancang agar memberi dampak positif dan dapat diikuti oleh berbagai kalangan.
+            </p>
+          </div>
+
+          <div class="program-grid">
+            <article class="card">
+              <div class="icon-box">📚</div>
+              <h3>Pendidikan & Pelatihan</h3>
+              <p>
+                Kelas digital, pelatihan keterampilan, serta pendampingan generasi muda untuk kesiapan menghadapi masa depan.
+              </p>
+            </article>
+
+            <article class="card">
+              <div class="icon-box">🌿</div>
+              <h3>Lingkungan & Kebersihan</h3>
+              <p>
+                Kerja bakti, pemeliharaan lingkungan, dan edukasi kebersihan untuk menciptakan ruang yang sehat.
+              </p>
+            </article>
+
+            <article class="card">
+              <div class="icon-box">🩺</div>
+              <h3>Kesehatan & Posyandu</h3>
+              <p>
+                Program kesehatan masyarakat, pemeriksaan rutin, dan edukasi gizi untuk keluarga dan anak-anak.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section transparency" id="transparansi">
+        <div class="container">
+          <div class="section-header">
+            <span class="eyebrow">Transparansi</span>
+            <h2>Data dan laporan kegiatan yang dapat dipantau oleh semua pihak.</h2>
+            <p>
+              Kami berkomitmen menjaga kejelasan informasi melalui laporan keuangan, partisipasi, dan pencapaian program.
+            </p>
+          </div>
+
+          <div class="dashboard">
+            <div class="dashboard-head">
+              <h3>Dashboard Kegiatan & Keuangan</h3>
+              <span class="pill">Update bulan ini</span>
+            </div>
+
+            <div class="dashboard-grid">
+              <div class="metric">
+                <div class="ring" style="background: conic-gradient(var(--primary) 0 68%, #e5eef2 68% 100%);">
+                  <span>68%</span>
+                </div>
+                <h4>Pencapaian Program</h4>
+                <p>Target kegiatan tercapai</p>
+              </div>
+
+              <div class="metric">
+                <div class="ring" style="background: conic-gradient(var(--success) 0 52%, #e5eef2 52% 100%);">
+                  <span>52%</span>
+                </div>
+                <h4>Donasi Terkumpul</h4>
+                <p>Rp 12,5 Juta</p>
+              </div>
+
+              <div class="metric">
+                <div class="ring" style="background: conic-gradient(var(--accent) 0 74%, #e5eef2 74% 100%);">
+                  <span>74%</span>
+                </div>
+                <h4>Partisipasi Warga</h4>
+                <p>Keterlibatan aktif anggota</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="jadwal">
+        <div class="container">
+          <div class="section-header">
+            <span class="eyebrow">Jadwal Kegiatan</span>
+            <h2>Agenda penting yang perlu diikuti bersama.</h2>
+            <p>
+              Jadwal kegiatan kami dibuat untuk memastikan keteraturan, partisipasi, dan transparansi dalam setiap aktivitas.
+            </p>
+          </div>
+
+          <div class="calendar-wrap">
+            <div class="calendar-box">
+              <div class="month">Oktober 2026</div>
+              <div class="day-row">
+                <div>Sun</div>
+                <div>Mon</div>
+                <div>Tue</div>
+                <div>Wed</div>
+                <div>Thu</div>
+                <div>Fri</div>
+                <div>Sat</div>
+              </div>
+              <div class="date-grid">
+                <div class="date-cell muted">28</div>
+                <div class="date-cell muted">29</div>
+                <div class="date-cell muted">30</div>
+                <div class="date-cell">1</div>
+                <div class="date-cell">2</div>
+                <div class="date-cell">3</div>
+                <div class="date-cell">4</div>
+
+                <div class="date-cell">5</div>
+                <div class="date-cell">6</div>
+                <div class="date-cell">7</div>
+                <div class="date-cell">8</div>
+                <div class="date-cell event">9</div>
+                <div class="date-cell">10</div>
+                <div class="date-cell event">11</div>
+
+                <div class="date-cell">12</div>
+                <div class="date-cell">13</div>
+                <div class="date-cell">14</div>
+                <div class="date-cell">15</div>
+                <div class="date-cell">16</div>
+                <div class="date-cell">17</div>
+                <div class="date-cell">18</div>
+
+                <div class="date-cell">19</div>
+                <div class="date-cell">20</div>
+                <div class="date-cell">21</div>
+                <div class="date-cell event">22</div>
+                <div class="date-cell">23</div>
+                <div class="date-cell">24</div>
+                <div class="date-cell">25</div>
+
+                <div class="date-cell">26</div>
+                <div class="date-cell">27</div>
+                <div class="date-cell">28</div>
+                <div class="date-cell">29</div>
+                <div class="date-cell">30</div>
+                <div class="date-cell">31</div>
+                <div class="date-cell muted">1</div>
+              </div>
+            </div>
+
+            <div class="calendar-box">
+              <ul class="event-list">
+                <li>
+                  <strong>Kerja Bakti Warga</strong>
+                  <span>Sabtu, 11 Oktober 2026 | 08:00</span>
+                </li>
+                <li>
+                  <strong>Rapat Pengurus</strong>
+                  <span>Senin, 14 Oktober 2026 | 19:00</span>
+                </li>
+                <li>
+                  <strong>Posyandu Remaja</strong>
+                  <span>Minggu, 19 Oktober 2026 | 09:00</span>
+                </li>
+                <li>
+                  <strong>Pembinaan Anggota</strong>
+                  <span>Rabu, 22 Oktober 2026 | 18:30</span>
+                </li>
+                <li>
+                  <strong>Peluncuran Program Baru</strong>
+                  <span>Sabtu, 25 Oktober 2026 | 10:00</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="section-header">
+            <span class="eyebrow">Tim Pengurus</span>
+            <h2>Orang-orang di balik semangat komunitas.</h2>
+            <p>
+              Komunitas ini dijalankan oleh tim pengurus yang aktif, peduli, dan siap melayani warga dengan tanggung jawab.
+            </p>
+          </div>
+
+          <div class="team-grid">
+            <article class="team-card">
+              <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=800&q=80" alt="Ketua Karang Taruna" />
+              <div class="team-body">
+                <h3>Andi Pratama</h3>
+                <div class="role">Ketua</div>
+                <p>Memimpin arah program dan koordinasi dengan warga serta pihak eksternal.</p>
+              </div>
+            </article>
+
+            <article class="team-card">
+              <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=800&q=80" alt="Sekretaris Karang Taruna" />
+              <div class="team-body">
+                <h3>Siti Rahmadani</h3>
+                <div class="role">Sekretaris</div>
+                <p>Mengelola administrasi, arsip kegiatan, dan korespondensi organisasi.</p>
+              </div>
+            </article>
+
+            <article class="team-card">
+              <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=800&q=80" alt="Bendahara Karang Taruna" />
+              <div class="team-body">
+                <h3>Rizki Maulana</h3>
+                <div class="role">Bendahara</div>
+                <p>Menjaga transparansi keuangan dan pencatatan seluruh pemasukan serta pengeluaran.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" style="padding-top: 20px;">
+        <div class="container">
+          <div class="cta">
+            <div class="container cta-inner">
+              <div>
+                <h3>Jadilah bagian dari perubahan.</h3>
+                <p>Kolaborasi, semangat, dan kepedulian membawa komunitas kita menjadi lebih maju.</p>
+              </div>
+              <a href="#kontak" class="btn btn-primary">Daftar Sekarang</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="kontak">
+        <div class="container">
+          <div class="section-header">
+            <span class="eyebrow">Kontak & Form</span>
+            <h2>Hubungi kami atau sampaikan aspirasi Anda.</h2>
+            <p>
+              Kami terbuka untuk masukan, kolaborasi, donasi, maupun pendaftaran sebagai anggota baru.
+            </p>
+          </div>
+
+          <div class="contact-grid">
+            <div class="contact-card">
+              <h3>Informasi Kontak</h3>
+              <ul class="info-list">
+                <li>
+                  <strong>Alamat</strong>
+                  RT 007 / RW 03, Kelurahan X, Kecamatan Y
+                </li>
+                <li>
+                  <strong>WhatsApp</strong>
+                  +62 812-3456-7890
+                </li>
+                <li>
+                  <strong>Email</strong>
+                  karangtaruna00703@gmail.com
+                </li>
+                <li>
+                  <strong>Instagram</strong>
+                  @karangtaruna00703
+                </li>
+              </ul>
+            </div>
+
+            <div class="form-card">
+              <h3>Form Pendaftaran / Aspirasi</h3>
+              <form>
+                <div class="field">
+                  <label for="name">Nama Lengkap</label>
+                  <input id="name" type="text" placeholder="Masukkan nama lengkap" />
+                </div>
+
+                <div class="field">
+                  <label for="category">Kategori</label>
+                  <input id="category" type="text" placeholder="Anggota / Warga / Donatur" />
+                </div>
+
+                <div class="field">
+                  <label for="message">Pesan / Aspirasi</label>
+                  <textarea id="message" placeholder="Tuliskan aspirasi, saran, atau kebutuhan Anda..."></textarea>
+                </div>
+
+                <button type="button" class="submit-btn">Kirim</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container footer-inner">
+        <div>© <span id="year"></span> Karang Taruna 007/03</div>
+        <div>Semangat gotong royong untuk lingkungan yang lebih baik.</div>
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
